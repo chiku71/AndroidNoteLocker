@@ -6,11 +6,13 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class About extends NoteLockerAppActivity implements View.OnClickListener
 {
-
+    private TextView versionNameFld;
     private Button sendFeedbackBtn;
+
     String className = ToolUtils.getClassNameFromObject(this);
 
     @Override
@@ -29,6 +31,11 @@ public class About extends NoteLockerAppActivity implements View.OnClickListener
     private void initializeUIElements()
     {
         this.sendFeedbackBtn = findViewById(R.id.send_feedback_about);
+        this.versionNameFld = findViewById(R.id.tool_version_name_about);
+
+        // Add version number from Package Info.
+        String existingTxtVersionName = this.versionNameFld.getText().toString();
+        this.versionNameFld.setText(existingTxtVersionName + PackageUtils.getVersionName(getApplicationContext()));
     }
 
     private void setUpActionListeners()
