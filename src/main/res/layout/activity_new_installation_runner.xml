@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.apps71.notelocker.NewInstallationRunner">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:text="Welcome to Notelocker"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColor="@color/black"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/separatorColor"
+        android:layout_below="@id/note_header_read_note"/>
+
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="5dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="7sp"
+        android:text="Let's secure your important notes ..."
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black_overlay"/>
+
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="30dp" />
+
+    <ImageButton
+        android:id="@+id/proceed_to_signup_new_installation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:src="@mipmap/register_first_time"
+        android:background="@null"/>
+
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="1dp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="or"
+        android:textAlignment="gravity"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Space
+        android:layout_width="3dp"
+        android:layout_height="3dp" />
+
+    <ImageButton
+        android:id="@+id/proceed_to_import_backup_file_new_installation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:src="@mipmap/restore_backup"
+        android:background="@null"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30sp">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/note_locker_tool_developed_by"
+            android:textAlignment="gravity"
+            android:textSize="15sp"
+            android:layout_alignParentBottom="true" />
+
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

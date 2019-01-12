@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:background="@mipmap/locked_background"
+    tools:context="com.apps71.notelocker.LockApplication">
+
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="10dp" />
+
+    <EditText
+        android:id="@+id/unlock_password_ls"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:inputType="textPassword"
+        android:hint="Enter Password"/>
+
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="5dp" />
+
+    <ImageButton
+        android:id="@+id/unlock_btn_ls"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:background="@null"
+        android:src="@mipmap/unlock_button" />
+
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:text="(Unlock)"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30sp">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/note_locker_tool_developed_by"
+            android:textAlignment="gravity"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:layout_alignParentBottom="true" />
+
+
+    </RelativeLayout>
+
+</LinearLayout>

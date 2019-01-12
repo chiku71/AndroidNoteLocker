@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.apps71.notelocker.BackUpData">
+
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="10dp" />
+
+    <ImageButton
+        android:id="@+id/back_up_to_local_drive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:src="@mipmap/backup_to_local_drive"
+        android:background="@null"/>
+
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="3dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:textSize="10sp"
+        android:text="(Backup Data to your local drive.)" />
+
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:textSize="25sp"
+        android:text="@string/or" />
+
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="10dp" />
+
+    <ImageButton
+        android:id="@+id/back_up_to_google_drive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:src="@mipmap/backup_to_google_drive"
+        android:background="@null" />
+
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="3dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:textSize="10sp"
+        android:text="(Backup Data to your Google Drive.)" />
+
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="10dp" />
+
+    <TextView
+        android:id="@+id/output_message_back_up_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="5sp"
+        android:layout_marginRight="5sp"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:textSize="18sp" />
+
+
+</LinearLayout>

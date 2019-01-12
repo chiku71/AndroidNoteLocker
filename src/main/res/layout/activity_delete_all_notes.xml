@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.apps71.notelocker.DeleteAllNotes">
+
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="30dp" />
+
+    <EditText
+        android:id="@+id/password_dan"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:inputType="textPassword"
+        android:hint="Enter current Password"/>
+
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Are you sure, you want to delete all your notes ?"
+        android:layout_gravity="left"
+        android:textColor = "@color/black"
+        android:layout_marginLeft="10sp"
+        android:textStyle="bold"
+        android:textSize="15sp"/>
+
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="20dp" />
+
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical" >
+
+        <ImageButton
+            android:id="@+id/yes_delete_all_notes_dan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_marginLeft="40sp"
+            android:src="@mipmap/yes_btn"
+            android:background="@null"/>
+
+        <ImageButton
+            android:id="@+id/no_stop_here_dan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_toEndOf="@id/yes_delete_all_notes_dan"
+            android:layout_marginLeft="40sp"
+            android:src="@mipmap/no_btn"
+            android:background="@null"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:id="@+id/text_yes_dap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(Yes)"
+            android:gravity="center"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_marginLeft="46sp"
+            android:textColor = "@color/black"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(No)"
+            android:gravity="center"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_toEndOf="@id/text_yes_dap"
+            android:layout_marginLeft="60sp"
+            android:textColor = "@color/black"
+            android:textSize="12sp"/>
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

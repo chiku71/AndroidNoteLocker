@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/layout_user_home"
+    android:background="@color/black"
+    tools:context="com.apps71.notelocker.UserHome">
+
+    <TextView
+        android:id="@+id/page_info_user_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="HOME"
+        android:textSize="40sp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:background="@color/pageInfoBackground"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/all_notes_scroll_View"
+        android:padding="10dp"
+        android:layout_below="@id/page_info_user_home">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/linear_layout_all_notes">
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+    <!--This is the Floating Action Button's code-->
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/add_new_note_floating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        android:src="@mipmap/add_symbol"
+        app:elevation="5dp"
+        app:fabSize="normal"
+        android:layout_gravity="bottom|end"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.apps71.notelocker.ChangeSecurityQA">
+
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="30dp" />
+
+    <EditText
+        android:id="@+id/password_usqa"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:inputType="textPassword"
+        android:hint="Enter current Password"/>
+
+    <Spinner
+        android:id="@+id/seq_spinner_usqa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        />
+
+    <EditText
+        android:id="@+id/seq_ans_usqa"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:inputType="textPassword"
+        android:hint="Enter your answer"/>
+
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="10dp" />
+
+    <ImageButton
+        android:id="@+id/update_security_qa_usqa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:src="@mipmap/update_security_qa"
+        android:background="@null"/>
+
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="3sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(Update Security Q&amp;A)"
+        android:layout_gravity="center_horizontal"
+        android:textSize="12sp"/>
+
+
+
+</LinearLayout>
+

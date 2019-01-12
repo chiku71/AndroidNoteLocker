@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Note Locker</string>
+
+    <string name="or">or</string>
+
+    <string name="next_button">Next</string>
+    <string name="enter_new_password_placeholder">Enter New Password</string>
+    <string name="reenter_password_placeholder">Re-enter the Password</string>
+    <string name="password_criteria_desc">*Password should be minimum 8 characters. \n*Please avoid space at start or end of the password.</string>
+
+    <string name="about_us">Contact \nEmail : chiku71@gmail.com</string>
+    <string name="forget_password"><u>Forget Password ?</u>   </string>
+
+    <string name="title_activity_about_note_popup">about_note_popup</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_back_up_data">Back Up Data</string>
+    <string name="back_up_data_to_local_drive_button">Back Up Data to Local Drive</string>
+    <string name="back_up_data_to_google_drive_button">Back Up Data to Google Drive</string>
+    <string name="title_activity_new_installation_runner">NewInstallationRunner</string>
+    <string name="note_locker_tool_copyright">Copyright &#169; D Biswal</string>
+    <string name="note_locker_tool_developed_by">Developed by D. Biswal</string>
+
+
+</resources>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.apps71.notelocker.ReadNote">
+
+    <item
+        android:actionMenuTextAppearance="@style/customActionBar"
+        android:id="@+id/edit_note_menu"
+        android:title="Edit"
+        app:showAsAction="collapseActionView"
+        android:textSize="30dp"/>
+
+    <item
+        android:actionMenuTextAppearance="@style/customActionBar"
+        android:id="@+id/delete_note_read_menu"
+        android:title="Delete"
+        app:showAsAction="collapseActionView"
+        android:textSize="30dp"/>
+
+
+    <item
+        android:actionMenuTextAppearance="@style/customActionBar"
+        android:id="@+id/other_note_details_read"
+        android:title="Note Details"
+        app:showAsAction="collapseActionView"
+        android:textSize="30dp"/>
+
+    <item
+        android:actionMenuTextAppearance="@style/customActionBar"
+        android:id="@+id/add_comment_read"
+        android:title="Add Comment"
+        app:showAsAction="collapseActionView"
+        android:textSize="30dp"/>
+
+</menu>

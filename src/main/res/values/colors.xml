@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#67FCFC</color> <!-- #67fcfc #FF4081-->
+    <color name="white">#fff</color>
+    <color name="navyBlue">#30339F</color>
+    <color name="pageInfoBackground">#FEF9E7</color>
+    <color name="separatorColor">#154360</color>
+    <color name="black">#000000</color>
+    <color name="red">#F30719</color>
+    <color name="fadedSilver">#D7DBDD</color>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="C_99A3A4">#99A3A4</color>
+
+
+
+</resources>

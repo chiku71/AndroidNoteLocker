@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.apps71.notelocker.RestoreBackUpFileActivity">
+
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="30dp" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical" >
+
+        <Button
+            android:id="@+id/select_backup_file_new_installation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:textAllCaps="false"
+            android:text="Choose File" />
+
+
+        <TextView
+            android:id="@+id/selected_backup_file_to_restore_text_view_name"
+            android:layout_width="fill_parent"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_marginTop="15dp"
+            android:text=""
+            android:textSize="15sp"
+            android:layout_toEndOf="@id/select_backup_file_new_installation"
+            android:background="@drawable/text_view_border" />
+
+    </RelativeLayout>
+
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="30dp" />
+
+    <EditText
+        android:id="@+id/previous_password_in_backup_file"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:inputType="textPassword"
+        android:hint="Enter Previous Login Password"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:text="(*Please provide your previous password that you were using at the time of the backup was created.)"
+        android:textSize="15sp"
+        android:textAlignment="center" />
+
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="30dp" />
+
+    <ImageButton
+        android:id="@+id/import_backup_file_new_installation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:src="@mipmap/restore_backup_data"
+        android:background="@null"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30sp">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/note_locker_tool_developed_by"
+            android:textAlignment="gravity"
+            android:textSize="15sp"
+            android:layout_alignParentBottom="true" />
+
+
+    </RelativeLayout>
+
+</LinearLayout>

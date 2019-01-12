@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    tools:context="com.apps71.notelocker.AddCommentToNote">
+
+    <TextView
+        android:id="@+id/close_popup_add_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="X"
+        android:textSize="30sp"
+        android:textColor="@color/red"
+        android:textStyle="bold"
+        android:layout_gravity="end"
+        android:gravity="center"
+        android:background="@drawable/pop_up_closing_button_shape" />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="20dp"
+        android:orientation="vertical"
+        android:background="@drawable/pop_up_window_shape_inside"
+        tools:context="com.example.chiku.NoteLocker.AddCommentToNote">
+
+        <TextView
+            android:id="@+id/note_header_about_note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Comment ..."
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:gravity="center" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@color/separatorColor" />
+
+        <EditText
+            android:id="@+id/write_note_comment"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:inputType="textCapSentences|textMultiLine"
+            android:scrollbars="vertical"
+            android:scrollbarThumbVertical="@color/separatorColor"
+            android:gravity="top|start"
+            android:maxLength="5000"
+            android:maxLines="5000"
+            android:textColor="@color/black"
+            android:hint="Write your comment here ..."
+            android:textColorHint="@color/black_overlay"/>
+
+        <View
+            android:id="@+id/separator_add_comment"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@color/separatorColor" />
+
+        <Button
+            android:id="@+id/add_comment_to_note"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_gravity="right"
+            android:text="Done" />
+
+    </LinearLayout>
+
+</LinearLayout>
