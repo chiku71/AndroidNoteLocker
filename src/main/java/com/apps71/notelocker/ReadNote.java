@@ -76,17 +76,24 @@ public class ReadNote extends NoteLockerAppActivity implements View.OnClickListe
 
     private void moveToEditNoteActivity(boolean isNewNote)
     {
-        String noteType = Constants.EDIT;
-        if (isNewNote)
+        if (this.thisNoteKey < 2)
         {
-            noteType = Constants.NEW;
+            this.showMessageThisNoteCannotBeEdited();
         }
+        else
+        {
+            String noteType = Constants.EDIT;
+            if (isNewNote)
+            {
+                noteType = Constants.NEW;
+            }
 
-        Intent editActivity = new Intent(ReadNote.this, EditNote.class);
-        editActivity.putExtra(Constants.FROM_ACTIVITY, this.className);
-        editActivity.putExtra(Constants.NOTE_TYPE, noteType);
-        editActivity.putExtra(Constants.THIS_NOTE_KEY, this.thisNoteKey);
-        startActivity(editActivity);
+            Intent editActivity = new Intent(ReadNote.this, EditNote.class);
+            editActivity.putExtra(Constants.FROM_ACTIVITY, this.className);
+            editActivity.putExtra(Constants.NOTE_TYPE, noteType);
+            editActivity.putExtra(Constants.THIS_NOTE_KEY, this.thisNoteKey);
+            startActivity(editActivity);
+        }
     }
 
     private void moveToAboutNoteActivity()
@@ -111,11 +118,18 @@ public class ReadNote extends NoteLockerAppActivity implements View.OnClickListe
 
     private void prepareForAddingComment()
     {
-        Intent addCommentActivity = new Intent(ReadNote.this, AddCommentToNote.class);
-        addCommentActivity.putExtra(Constants.FROM_ACTIVITY, this.className);
-        addCommentActivity.putExtra(Constants.THIS_NOTE_KEY, this.thisNoteKey);
-        addCommentActivity.putExtra(Constants.NOTE_COMMENT, this.thisNoteDetails.getUserComment());
-        startActivity(addCommentActivity);
+        if (this.thisNoteKey < 2)
+        {
+            this.showMessageThisNoteCannotBeEdited();
+        }
+        else
+        {
+            Intent addCommentActivity = new Intent(ReadNote.this, AddCommentToNote.class);
+            addCommentActivity.putExtra(Constants.FROM_ACTIVITY, this.className);
+            addCommentActivity.putExtra(Constants.THIS_NOTE_KEY, this.thisNoteKey);
+            addCommentActivity.putExtra(Constants.NOTE_COMMENT, this.thisNoteDetails.getUserComment());
+            startActivity(addCommentActivity);
+        }
     }
 
     @Override
@@ -140,6 +154,11 @@ public class ReadNote extends NoteLockerAppActivity implements View.OnClickListe
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void showMessageThisNoteCannotBeEdited()
+    {
+        ToastUtils.showInfoForLongTime(getApplicationContext(), "This note can't be changed. It can only be deleted.");
     }
 
 
