@@ -1,0 +1,9 @@
+WelCome to NoteLocker !!!
+
+Using NoteLocker you can keep your secret/confidential notes safe and secured.
+Your notes are kept as encrypted files which can be decrypted only with your password.
+Even your backup data file is also kept encrypted, which can only be imported in the tool using your password. Hence never mind if someone steals your backup file.
+
+We respect your privacy. This tool will never have advertisements to avoid any unnecessary link with internet, so that your secrets will always be your secrets.
+
+Please rate this tool in PlayStore and your feedback is much appreciated.
