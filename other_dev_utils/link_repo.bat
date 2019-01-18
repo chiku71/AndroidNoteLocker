@@ -1,0 +1,1 @@
+mklink /D "D:\Ws\Android_WS\NoteLocker\app\src\main" "D:\Ws\Repos\Android\NoteLocker\src\main"
