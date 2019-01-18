@@ -17,11 +17,11 @@ MainActivity ---> LoginActivity -- <On successful> --> UserHome
 
 
 TODO Activities :
---> Complete the Help menu - Low
+--> Complete the Help menu - Low -- Omitted for now
 --> Add option for selected delete from UserHome
 --> Enhance for storing Image
 --> Add search button for notes using the note Header
---> Add finger print access for Login
+--> Add finger print access for Login -- Out of scope due to security issue
 --> Add Rate this App
 --> Additional password for specific note
 --> Add Time Out for Inactive for some time without going to background.

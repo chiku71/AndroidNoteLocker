@@ -17,12 +17,38 @@
         android:inputType="textPassword"
         android:hint="Enter current Password"/>
 
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="5sp" />
+
     <Spinner
         android:id="@+id/seq_spinner_usqa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         />
+
+    <LinearLayout
+        android:id="@+id/write_own_sq_layout_usqa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <Space
+            android:layout_width="1dp"
+            android:layout_height="5sp" />
+
+        <EditText
+            android:id="@+id/write_own_sq_usqa"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:hint="Write your security question ..."/>
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="5sp" />
 
     <EditText
         android:id="@+id/seq_ans_usqa"

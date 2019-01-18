@@ -1,0 +1,5 @@
+NoteLocker v1.2
+What's new ... ?
+* SetUp your own security question
+* Fixed major issue with Session Validation
+* Fixed some other bugs

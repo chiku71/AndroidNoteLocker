@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.support.v7.app.AppCompatActivity;
@@ -18,9 +19,10 @@ import java.io.File;
 public class SetSecretQuestion extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener
 {
     private Spinner seqSpinner;
-    private EditText seqAnswerField;
+    private EditText seqAnswerField, writeOwnSqField;
     private ImageButton finishSignUpButton;
     private TextView pageHeader;
+    private LinearLayout writeOwnSqLayout;
 
     String[] seqOptions = DataFileInfo.getSecretQuestions();
     String seqText, seqAnswerText, loginPasswordTxt;
@@ -52,12 +54,25 @@ public class SetSecretQuestion extends AppCompatActivity implements AdapterView.
         this.seqAnswerField = findViewById(R.id.seq_answer);
         this.finishSignUpButton = findViewById(R.id.get_started);
         this.pageHeader = findViewById(R.id.setup_security_qa_su);
+        this.writeOwnSqField = findViewById(R.id.write_own_sq_ssqa);
+        this.writeOwnSqLayout = findViewById(R.id.write_own_sq_layout_ssqa);
 
         this.pageHeader.setText(this.pageHeader.getText() + " " + EmojiUtils.getSmileyEmoji());
 
         ArrayAdapter arrayAdapterSeq = new ArrayAdapter(this, android.R.layout.simple_spinner_item, this.seqOptions);
         arrayAdapterSeq.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         this.seqSpinner.setAdapter(arrayAdapterSeq);
+    }
+
+    private String getSecurityQuestion()
+    {
+        String securityQuestion = this.seqSpinner.getSelectedItem().toString();
+        if (securityQuestion.equals(DataFileInfo.WRITE_YOUR_OWN_SECURITY_QUESTION_TXT))
+        {
+            securityQuestion = this.writeOwnSqField.getText().toString();
+        }
+
+        return securityQuestion;
     }
 
     @Override
@@ -72,13 +87,17 @@ public class SetSecretQuestion extends AppCompatActivity implements AdapterView.
             {
                 ToastUtils.showFailureMessage(this, "Please select one secret question from the dropdown list.");
             }
+            else if (seqText.equals(DataFileInfo.WRITE_YOUR_OWN_SECURITY_QUESTION_TXT) && this.writeOwnSqField.getText().toString().trim().length() == 0)
+            {
+                ToastUtils.showFailureMessage(this, "Please write your secret question.");
+            }
             else if (seqAnswerText.length() == 0 )
             {
                 ToastUtils.showFailureMessage(this, "Please provide answer for the selected secret question.");
             }
             else
             {
-                this.seqText = seqText;
+                this.seqText = this.getSecurityQuestion();
                 this.seqAnswerText = seqAnswerText;
 
                 boolean signUpCompletionStatus = this.completeSignUpProcess();
@@ -158,7 +177,23 @@ public class SetSecretQuestion extends AppCompatActivity implements AdapterView.
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id)
     {
-        // Method to override the Abstract method to overcome compilation error
+        /* Check if User has opted for having their own security question.
+         * If Yes, then show the EditText field for writing the Security Question.
+         * Else if User has selected any other option Hide the EditText field for writing the Security Question.
+         * */
+        if (adapterView.getId() == R.id.seq_spinner)
+        {
+            String selectedValue = this.seqSpinner.getSelectedItem().toString();
+
+            if (selectedValue.equals(DataFileInfo.WRITE_YOUR_OWN_SECURITY_QUESTION_TXT))
+            {
+                this.writeOwnSqLayout.setVisibility(View.VISIBLE);
+            }
+            else
+            {
+                this.writeOwnSqLayout.setVisibility(View.GONE);
+            }
+        }
     }
 
     @Override

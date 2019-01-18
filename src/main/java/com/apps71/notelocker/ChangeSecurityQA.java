@@ -9,13 +9,15 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 
 public class ChangeSecurityQA extends NoteLockerAppActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener
 {
     ImageButton updateSecurityQABtn;
     Spinner seqSpinner;
-    EditText enteredPasswordFld, enteredSeqAnsFld;
+    EditText enteredPasswordFld, enteredSeqAnsFld, writeOwnSecurityQuestionFld;
+    LinearLayout writeOwnSqLayout;
 
     String[] seqOptions = DataFileInfo.getSecretQuestions();
     String seqText, seqAnswerText, enteredPassword;
@@ -63,6 +65,8 @@ public class ChangeSecurityQA extends NoteLockerAppActivity implements AdapterVi
         this.seqSpinner = findViewById(R.id.seq_spinner_usqa);
         this.enteredSeqAnsFld = findViewById(R.id.seq_ans_usqa);
         this.updateSecurityQABtn = findViewById(R.id.update_security_qa_usqa);
+        this.writeOwnSecurityQuestionFld = findViewById(R.id.write_own_sq_usqa);
+        this.writeOwnSqLayout = findViewById(R.id.write_own_sq_layout_usqa);
 
 
         ArrayAdapter arrayAdapterSeq = new ArrayAdapter(this, android.R.layout.simple_spinner_item, this.seqOptions);
@@ -77,6 +81,17 @@ public class ChangeSecurityQA extends NoteLockerAppActivity implements AdapterVi
         {
             this.processInputData();
         }
+    }
+
+    private String getSecurityQuestion()
+    {
+        String securityQuestion = this.seqSpinner.getSelectedItem().toString();
+        if (securityQuestion.equals(DataFileInfo.WRITE_YOUR_OWN_SECURITY_QUESTION_TXT))
+        {
+            securityQuestion = this.writeOwnSecurityQuestionFld.getText().toString();
+        }
+
+        return securityQuestion;
     }
 
     private void  processInputData()
@@ -97,6 +112,10 @@ public class ChangeSecurityQA extends NoteLockerAppActivity implements AdapterVi
         {
             ToastUtils.showFailureMessage(this, "Please select one secret question from the dropdown list.");
         }
+        else if (this.seqText.equals(DataFileInfo.WRITE_YOUR_OWN_SECURITY_QUESTION_TXT) && this.writeOwnSecurityQuestionFld.getText().toString().trim().length() == 0)
+        {
+            ToastUtils.showFailureMessage(this, "Please write your secret question.");
+        }
         else if (this.seqAnswerText.length() == 0 )
         {
             ToastUtils.showFailureMessage(this, "Please provide answer for the selected secret question.");
@@ -108,6 +127,8 @@ public class ChangeSecurityQA extends NoteLockerAppActivity implements AdapterVi
             {
                 try
                 {
+                    this.seqText = this.getSecurityQuestion();
+
                     this.updateSecurityQA();
                     ToastUtils.showSuccessMessage(this, "Your Security Q&A has been updated successfully.");
                     this.onBackPressed();
@@ -135,7 +156,23 @@ public class ChangeSecurityQA extends NoteLockerAppActivity implements AdapterVi
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id)
     {
-       // Method to override the Abstract method to overcome compilation error
+        /* Check if User has opted for having their own security question.
+         * If Yes, then show the EditText field for writing the Security Question.
+         * Else if User has selected any other option Hide the EditText field for writing the Security Question.
+         * */
+        if (adapterView.getId() == R.id.seq_spinner_usqa)
+        {
+            String selectedValue = this.seqSpinner.getSelectedItem().toString();
+
+            if (selectedValue.equals(DataFileInfo.WRITE_YOUR_OWN_SECURITY_QUESTION_TXT))
+            {
+                this.writeOwnSqLayout.setVisibility(View.VISIBLE);
+            }
+            else
+            {
+                this.writeOwnSqLayout.setVisibility(View.GONE);
+            }
+        }
     }
 
     @Override
