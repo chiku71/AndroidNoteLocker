@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.design.widget.FloatingActionButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,13 +19,9 @@ import java.util.TreeMap;
 
 public class UserHome extends NoteLockerAppActivity implements View.OnClickListener
 {
-    private FloatingActionButton addNoteFloatingButton;
 
     private String className = ToolUtils.getClassNameFromObject(this);
-
     private static Map<Integer, Integer> pageKeyIdMap = null;
-    private AllNotes allNotes;
-
     boolean backButtonPressedTwice = false;
 
 
@@ -35,19 +31,21 @@ public class UserHome extends NoteLockerAppActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_home);
 
+        FloatingActionButton addNoteFloatingButton = findViewById(R.id.add_new_note_floating);
+
         pageKeyIdMap = new TreeMap<>();
         Context appContext = getApplicationContext();
 
         if (SessionManager.authenticateSession(appContext))
         {
-            this.allNotes = new AllNotes(appContext);
+            AllNotes allNotes = new AllNotes(appContext);
             // App session has been authenticated successfully.
-            Map<Integer, NoteDetails> allNoteDetails = this.allNotes.getAllNoteDetails();
+            Map<Integer, NoteDetails> allNoteDetails = allNotes.getAllNoteDetails();
 
             if (allNoteDetails == null)
             {
                 // Loading all Notes ...
-                allNoteDetails = this.allNotes.fetchAllNoteDetails();
+                allNoteDetails = allNotes.fetchAllNoteDetails();
             }
 
             this.displayAllNotesInUserHome(allNoteDetails);
@@ -56,7 +54,6 @@ public class UserHome extends NoteLockerAppActivity implements View.OnClickListe
             // Toolbar userHomeToolBar = findViewById(R.id.user_home_toolbar);
             // setSupportActionBar(userHomeToolBar);
 
-            addNoteFloatingButton = findViewById(R.id.add_new_note_floating);
             addNoteFloatingButton.setOnClickListener(this);
         }
         else

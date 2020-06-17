@@ -44,7 +44,7 @@
         android:textColor="@color/white"
         android:layout_below="@id/separator_read_note"/>
 
-    <android.support.design.widget.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/edit_note_floating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
